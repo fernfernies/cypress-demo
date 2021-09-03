@@ -1,6 +1,6 @@
 {
 
-  "Car": [
+  "CarDetail": [
       {
           "carModel": "Toyota",
           "carBrand": "4Runner",
