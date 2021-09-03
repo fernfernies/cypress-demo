@@ -1,24 +1,81 @@
 {
-
-  "CarDetail": [
-      {
-          "carModel": "Toyota",
-          "carBrand": "4Runner",
-          "carYear": "1996"
-      },
-
-      {
-        "carModel": "Toyota",
-        "carBrand": "4Runner",
-        "carYear": "1996"
-      },
-
-      {
-        "carModel": "Toyota",
-        "carBrand": "4Runner",
-        "carYear": "1996"
-      }
-
-  ]
-
+  "CarDetail": {
+    "carbrand": {
+      "field_type": "select",
+      "value": "Toyota"
+    },
+    "carmodel": {
+      "field_type": "select",
+      "value": "4Runner"
+    },
+    "carmanufac": {
+      "field_type": "select",
+      "value": "1996"
+    },
+    "hmborrow": {
+      "field_type": "text",
+      "value": "300000"
+    },
+    "_hmborrow": {
+      "field_type": "button"
+    },
+    "debtfree-N": {
+      "field_type": "label"
+    },
+    "hmrepaid-A1": {
+      "field_type": "label"
+    },
+    "latepayment-A1": {
+      "field_type": "label"
+    },
+    "province": {
+      "field_type": "select",
+      "value": "Nonthaburi"
+    },
+    "district": {
+      "field_type": "select",
+      "value": "Bang Yai"
+    },
+    "zipcode": {
+      "field_type": "select",
+      "value": "11140"
+    },
+    "occupation": {
+      "field_type": "select",
+      "value": "A1"
+    },
+    "income": {
+      "field_type": "select",
+      "value": "A2"
+    },
+    "name": {
+      "field_type": "text",
+      "value": "Test"
+    },
+    "surname": {
+      "field_type": "text",
+      "value": "Json"
+    },
+    "_name": {
+      "field_type": "button"
+    },
+    "phone": {
+      "field_type": "text",
+      "value": "0999999999"
+    },
+    "email": {
+      "field_type": "text",
+      "value": "json@test.com"
+    },
+    "_phone": {
+      "field_type": "button"
+    },
+    "SCB": {
+      "field_type": "contain",
+      "value": "SCB"
+    },
+    "_btn-marketing-consent": {
+      "field_type": "button"
+    }
+  }
 }

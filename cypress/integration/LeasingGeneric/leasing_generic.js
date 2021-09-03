@@ -7,6 +7,7 @@ const url = 'https://staging-rc-loan-lease-app.rabbitinternet.com/en/product/lea
 
 
   Given("User land to leasing question page", () => {
+    cy.intercept('GET', "**/api/platform/leasing").as('pageload')
     cy.visit(url);
     // cy.readFile('cypress/fixtures/example.json').then(testdata => {
     //   testdata.forEach(data => {
@@ -20,15 +21,45 @@ const url = 'https://staging-rc-loan-lease-app.rabbitinternet.com/en/product/lea
   });
   
   When("User fill-in car infomation", () => {
+    cy.wait('@pageload');
     const keys = Object.keys(CarDetail);
     const values = Object.values(CarDetail);
-    
-      for (let index = 0; index < keys.length; index += 1) {
-        cy.log(keys[index])
-        cy.log(values[index])
-      
+    console.log(keys);
+    console.log(values);
+      for (let a = 0; a < keys.length; a += 1) {
+        cy.log(keys[a])
+        cy.log(values[a].field_type)
+        switch (values[a].field_type) {
+          case "select":
+            cy.log(values[a].value)
+            cy.get(`select[name="${keys[a]}"]`).select(values[a].value)
+          break;
+          case "button":
+            let id = keys[a].slice(1);
+            let selector = `//*[@id="${id}"]//*[@type="button"]`;
+            cy.xpath(selector).click();
+          break;
+          case "label":
+            cy.get(`label[for="${keys[a]}"]`).click();
+          break;
+          case "text":
+            cy.get(`input[name="${keys[a]}"]`).type(values[a].value)
+          break;
+          case "contain":
+            cy.get('div[class="card-body"]').contains('h4', values[a].value)
+          break;
+          default:
+            cy.log("field_type is invalid")
+            break;
+        }
       }
     
+    //  
+// 
+//  
+// 
+// 
+
      
    
 
